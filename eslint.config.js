@@ -31,6 +31,7 @@ export default [
         FileReader: "readonly",
         URL: "readonly",
         fetch: "readonly",
+        AbortController: "readonly",
       },
     },
 
