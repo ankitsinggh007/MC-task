@@ -29,10 +29,15 @@ function Todo({ todoList, setTodoList }) {
                 id={id}
                 type="checkbox"
                 checked={complete}
-                onClick={() => update("mark", id)}
+                onChange={() => update("mark", id)}
               />
               <label htmlFor={id}> {text}</label>
-              <button onClick={() => update("delete", id)}>␡</button>
+              <button
+                aria-label="Delete todo"
+                onClick={() => update("delete", id)}
+              >
+                ␡
+              </button>
             </li>
           ))}
         </ul>
