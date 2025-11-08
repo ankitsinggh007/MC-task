@@ -18,7 +18,6 @@ function Todo({ todoList, setTodoList }) {
     }
     setTodoList(temp);
   }
-  console.log(todoList, "lis");
   return (
     <section>
       {todoList.length > 0 ? (
@@ -42,7 +41,7 @@ function Todo({ todoList, setTodoList }) {
           ))}
         </ul>
       ) : (
-        <p>empty box</p>
+        <p>No todos yet ✏️</p>
       )}
     </section>
   );
