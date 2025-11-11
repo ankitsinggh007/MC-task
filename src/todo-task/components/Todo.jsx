@@ -15,8 +15,8 @@ function Todo({ todoList, setTodoList, filter, sort }) {
   let filterData = useMemo(() => {
     return todoList.filter((obj) => {
       if (filter === "All") return true;
-      if (filter === "Complete") return true;
-      if (filter === "Pending") return true;
+      if (filter === "Complete") return obj.complete;
+      if (filter === "Pending") return !obj.complete;
     });
   }, [filter, todoList]);
 
@@ -25,6 +25,7 @@ function Todo({ todoList, setTodoList, filter, sort }) {
   } else {
     filterData.sort((a, b) => b.id - a.id);
   }
+  console.log("FILTER DATA:", filterData, filter);
   return (
     // 🎯 JIT: Centered section with fixed width for consistency.
     <section className="flex flex-col h-96 items-center w-full max-w-xl text-white">
