@@ -1,7 +1,12 @@
+import { Route, Routes } from "react-router-dom";
+import TodoPage from "./todo-task/pages/TodoPage";
+import HomePage from "./pages/HomePage";
+
 export default function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-gray-900 text-white text-xl">
-      MC Boilerplate Ready 🚀
-    </div>
+    <Routes>
+      <Route exact path="/" element={<HomePage/>} />
+      <Route path="task-1" element={<TodoPage />} />
+    </Routes>
   );
 }
